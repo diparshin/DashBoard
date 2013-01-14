@@ -1,0 +1,18 @@
+%h2Объявления
+- if (@items.empty?)
+  %h3У Вас нет объявлений
+- else
+  %table
+    %tr
+      %thЗаголовок
+      %thТекст
+      %thРазделы
+      %thДействия
+    - @items.each do |item|
+      %tr
+        %td=item.title
+        %td=item.body
+        %td=item.tags.map{|tag| tag.name}.join(', ')
+        %td=link_to "Удалить", dashboard_item_path(item), method: :delete, data: { confirm: 'Уверены?' }
+%br
+= link_to 'Новое объявление', new_dashboard_item_url

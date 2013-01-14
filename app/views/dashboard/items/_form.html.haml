@@ -1,0 +1,18 @@
+= form_for @item, as: :item, url: dashboard_items_path(@item) do |f|
+  =f.error_messages
+
+  #title 
+    = f.label :title
+    = f.text_field :title
+  
+  #body
+    = f.label :body
+    %br
+    = f.text_area :body
+    
+  #tags
+    = label_tag :tags
+    = text_field_tag :tags, f.object.tags.map{|tag| tag.name}.join(', ')
+
+  .actions
+    = f.submit 'Сохранить'

@@ -8,10 +8,12 @@ class Dashboard::ItemsController < ApplicationController
   
   def new
     @item = current_user.items.new
+    @item.images.new
   end
   
   def create
     @item = current_user.items.build(params[:item].slice(:title, :body))
+    @item.images.build(params[:item][:image][:new])
     
     if @item.save
       @item.set_tags(params[:tags])
@@ -23,6 +25,7 @@ class Dashboard::ItemsController < ApplicationController
   
   def edit
     @item = current_user.items.find(params[:id])
+    @item.images.new
   end
   
   def update

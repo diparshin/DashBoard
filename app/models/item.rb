@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :image
+  has_many :images
   has_and_belongs_to_many :tags
   attr_accessible :body, :title
   validates :body, :title, :presence => true

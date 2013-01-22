@@ -1,17 +1,17 @@
-= form_for @item, as: :item, url: dashboard_items_path(@item) do |f|
+= form_for @item, as: :item, url: @item.new_record? ? dashboard_items_path : dashboard_item_path(@item) do |f|
   =f.error_messages
 
-  #title 
-    = f.label :title
+  #title
+    = f.label :title, t(:title, :scope => :item_fields)
     = f.text_field :title
   
   #body
-    = f.label :body
+    = f.label :body, t('item_fields.body')
     %br
     = f.text_area :body
     
   #tags
-    = label_tag :tags
+    = label_tag :tags, t(:tags, :scope => [:item_fields])
     = text_field_tag :tags, f.object.tags.map{|tag| tag.name}.join(', ')
 
   .actions

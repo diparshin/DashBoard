@@ -1,13 +1,15 @@
 DashBoard::Application.routes.draw do
-  get "home/index"
+  #get "home/index"
 
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "dashboard/items#index"
   
   namespace :dashboard do
     resources :items
   end
+  
+  ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { :prefix_on_default_locale => true, :keep_untranslated_routes => true })
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

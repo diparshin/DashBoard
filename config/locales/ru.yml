@@ -1,0 +1,13 @@
+ru:
+  ru: Русский
+  en: Английский
+  
+  sign_out: Выйти
+  sign_in: Войти
+  sing_up: Регистрация
+  your_items: Ваши объявления
+  
+  item_fields:
+    title: Заголовок
+    body: Текст
+    tags: Разделы

@@ -1,18 +1,20 @@
-%h2Объявления
+%h2=t :your_items
 - if (@items.empty?)
   %h3У Вас нет объявлений
 - else
   %table
     %tr
-      %thЗаголовок
-      %thТекст
-      %thРазделы
+      %th=t :title, :scope => [:item_fields]
+      %th=t :body, :scope => [:item_fields]
+      %th=t :tags, :scope => [:item_fields]
       %thДействия
     - @items.each do |item|
       %tr
         %td=item.title
         %td=item.body
         %td=item.tags.map{|tag| tag.name}.join(', ')
-        %td=link_to "Удалить", dashboard_item_path(item), method: :delete, data: { confirm: 'Уверены?' }
-%br
+        %td
+          =link_to "Удалить", dashboard_item_path(item), method: :delete, data: { confirm: 'Уверены?' }, title: "Удалить"
+          =link_to "Редактировать", edit_dashboard_item_url(item)
+%br/
 = link_to 'Новое объявление', new_dashboard_item_url

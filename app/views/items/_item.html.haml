@@ -1,0 +1,14 @@
+%div
+  -if !item.main_image.blank?
+    %img{:src => item.main_image.filename_url(:thumb), :align => :left}
+  %strong= item.title
+  %br/
+  %small= Russian::strftime(item.created_at, '%d-%b-%Y %H:%M')
+  %br/
+  %small= item.tags.map{|tag| tag.name}.join(', ')
+%div= item.body
+%div
+  =link_to t(:remove), dashboard_item_path(item), method: :delete, data: { confirm: 'Уверены?' }, title: "Удалить"
+  =link_to t(:edit), edit_dashboard_item_url(item)
+%hr
+  

@@ -24,4 +24,16 @@ class Item < ActiveRecord::Base
       self.tags << tag
     end
   end
+  
+  def main_image
+    if self.image
+      return self.image
+    end
+    
+    unless self.images.empty?
+      self.images.first
+    else
+      nil
+    end
+  end
 end

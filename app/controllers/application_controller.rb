@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   end
   
   def set_locale
-    I18n.locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
+    available = %w{en ru}
+    I18n.locale = params[:locale] || http_accept_language.preferred_language_from(available)
   end
 end

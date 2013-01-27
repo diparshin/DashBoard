@@ -4,3 +4,19 @@
 en:
   ru: Russian
   en: English
+
+  your_items: Your items
+  
+  new_item: New item
+  items_list: Items list
+  edit_item: Edit item %{title}  
+  
+  save: Save
+  remove: Remove
+  edit: Edit
+  
+  remove_field: Remove field
+  add_upload_field: Add upload field %{item}
+  of_image: of image
+  
+  you_dont_have_items: You don't have items 

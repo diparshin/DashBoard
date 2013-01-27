@@ -8,7 +8,6 @@ class Dashboard::ItemsController < ApplicationController
   
   def new
     @item = current_user.items.new
-#    @item.images.new
   end
   
   def create
@@ -29,7 +28,7 @@ class Dashboard::ItemsController < ApplicationController
   def update
     @item = current_user.items.find(params[:id]);
     
-    if @item && @item.update_attributes(params[:item])
+    if @item.update_attributes(params[:item])
       @item.set_tags(params[:tags])
       redirect_to dashboard_items_url
     else

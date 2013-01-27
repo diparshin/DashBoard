@@ -1,5 +1,5 @@
-%h2Редактирование объявления '#{@item.title}'
+%h2=t(:edit_item, :title => @item.title)
 
 = render 'form'
 
-= link_to 'Список объявлений', dashboard_items_url
+= link_to t(:items_list), dashboard_items_url

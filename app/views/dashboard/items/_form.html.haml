@@ -2,11 +2,11 @@
   =f.error_messages
 
   #title
-    = f.label :title, t(:title, :scope => :item_fields)
+    = f.label Item.human_attribute_name(:title)
     = f.text_field :title
   
   #body
-    = f.label :body, t('item_fields.body')
+    = f.label Item.human_attribute_name(:body)
     %br
     = f.text_area :body
     
@@ -16,8 +16,8 @@
     
   = f.fields_for :images do |fi|
     = render :partial => 'image_fields', :locals => { :f => fi }
-  %p=add_child_link "New image upload", :images
+  %p=add_child_link t(:add_upload_field, :item => t(:of_image)), :images
   =new_child_fields_template f, :images, :partial => 'image_fields'
 
   .actions
-    = f.submit 'Сохранить'
+    = f.submit t(:save)

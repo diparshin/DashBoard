@@ -12,10 +12,15 @@ gem 'therubyracer'
 gem 'haml-rails'
 gem 'dynamic_form'
 gem 'rails-translate-routes'
-gem 'russian'
-gem 'erb2haml'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'http_accept_language', :git => 'git://github.com/kaize/http_accept_language.git'
+
+group :development do
+  gem 'russian'
+  gem 'erb2haml'
+  gem 'devise-i18n-views'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

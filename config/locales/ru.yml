@@ -1,4 +1,9 @@
 ru:
+  activerecord:
+    attributes:
+      item:
+        title: Заголовок
+        body: Текст
   ru: Русский
   en: Английский
   
@@ -7,7 +12,16 @@ ru:
   sing_up: Регистрация
   your_items: Ваши объявления
   
-  item_fields:
-    title: Заголовок
-    body: Текст
-    tags: Разделы
+  save: Сохранить
+  remove: Удалить
+  edit: Редактировать
+  
+  new_item: Новое объявление
+  items_list: Список объявлений
+  edit_item: Редактирование объявления %{title}  
+  
+  remove_field: Удалить поле
+  add_upload_field: Добавить поле для загрузки %{item}
+  of_image: картинки
+  
+  you_dont_have_items: У Вас нет объявлений

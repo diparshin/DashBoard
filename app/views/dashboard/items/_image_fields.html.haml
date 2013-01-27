@@ -2,7 +2,7 @@
   = image_tag(f.object.filename_url(:thumb)) if f.object.filename?
   = f.file_field :filename
   -if f.object.new_record?
-    = remove_child_link("Remove field", f)
+    = remove_child_link(t(:remove_field), f)
   -else
     = f.check_box :_destroy
-    = f.label :_destroy, "Remove"
+    = f.label :_destroy, t(:remove)

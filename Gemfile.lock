@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/kaize/http_accept_language.git
+  revision: eed7a6c154a00a42ff9ded90abf5e6c099b0687a
+  specs:
+    http_accept_language (2.0.1.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,6 +52,7 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    devise-i18n-views (0.2.5)
     dynamic_form (1.1.4)
     erb2haml (0.1.2)
       haml
@@ -144,10 +151,12 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
+  devise-i18n-views
   dynamic_form
   erb2haml
   execjs
   haml-rails
+  http_accept_language!
   jquery-rails
   rails (= 3.2.11)
   rails-translate-routes

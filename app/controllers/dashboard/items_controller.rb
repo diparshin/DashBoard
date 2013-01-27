@@ -8,12 +8,11 @@ class Dashboard::ItemsController < ApplicationController
   
   def new
     @item = current_user.items.new
-    @item.images.new
+#    @item.images.new
   end
   
   def create
-    @item = current_user.items.build(params[:item].slice(:title, :body))
-    @item.images.build(params[:item][:image][:new])
+    @item = current_user.items.build(params[:item])
     
     if @item.save
       @item.set_tags(params[:tags])
@@ -25,13 +24,12 @@ class Dashboard::ItemsController < ApplicationController
   
   def edit
     @item = current_user.items.find(params[:id])
-    @item.images.new
   end
   
   def update
     @item = current_user.items.find(params[:id]);
     
-    if @item && @item.update_attributes(params[:item].slice(:title, :body))
+    if @item && @item.update_attributes(params[:item])
       @item.set_tags(params[:tags])
       redirect_to dashboard_items_url
     else

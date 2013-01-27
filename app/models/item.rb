@@ -4,7 +4,9 @@ class Item < ActiveRecord::Base
   has_many :images
   has_and_belongs_to_many :tags
   attr_accessible :body, :title
+  attr_accessible :images_attributes
   validates :body, :title, :presence => true
+  accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if => proc { |attributes| attributes['filename'].blank? }
   
   def set_tags(tags)
     if (tags.is_a? String)

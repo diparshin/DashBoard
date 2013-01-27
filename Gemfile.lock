@@ -105,6 +105,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     ref (1.0.2)
+    rmagick (2.13.1)
     ruby_parser (3.1.1)
       sexp_processor (~> 4.1)
     russian (0.6.0)
@@ -150,6 +151,7 @@ DEPENDENCIES
   jquery-rails
   rails (= 3.2.11)
   rails-translate-routes
+  rmagick
   russian
   sass-rails (~> 3.2.3)
   sqlite3

@@ -13,13 +13,11 @@
   #tags
     = label_tag :tags, t(:tags, :scope => [:item_fields])
     = text_field_tag :tags, f.object.tags.map{|tag| tag.name}.join(', ')
-  
-  #image
-    - @item.images.each do |image|
-      = f.fields_for image, :index => image.id || :new do |fi|
-        = image_tag(fi.object.filename_url) if fi.object.filename?
-        = fi.file_field :filename
-        = fi.hidden_field :filename_cache unless fi.object.new_record?
+    
+  = f.fields_for :images do |fi|
+    = render :partial => 'image_fields', :locals => { :f => fi }
+  %p=add_child_link "New image upload", :images
+  =new_child_fields_template f, :images, :partial => 'image_fields'
 
   .actions
     = f.submit 'Сохранить'

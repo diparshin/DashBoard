@@ -22,6 +22,13 @@ group :development do
   gem 'devise-i18n-views'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

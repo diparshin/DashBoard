@@ -1,3 +1,4 @@
+= debug @main
 = form_for @item, as: :item, url: @item.new_record? ? dashboard_items_path : dashboard_item_path(@item), :html => {:multipart => true} do |f|
   =f.error_messages
 
@@ -8,7 +9,7 @@
   #body
     = f.label Item.human_attribute_name(:body)
     %br
-    = f.text_area :body
+    = f.text_area :body, :size => '70x25'
     
   #tags
     = label_tag :tags, t(:tags, :scope => [:item_fields])

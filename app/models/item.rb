@@ -26,14 +26,6 @@ class Item < ActiveRecord::Base
   end
   
   def main_image
-    if self.image
-      return self.image
-    end
-    
-    unless self.images.empty?
-      self.images.first
-    else
-      nil
-    end
+    self.image || self.images.first
   end
 end

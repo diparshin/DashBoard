@@ -4,4 +4,9 @@ class Image < ActiveRecord::Base
   validates :filename, :presence => true
   
   mount_uploader :filename, ImageUploader
+  
+  def main?
+    return false if self.item.blank?
+    self == self.item.image
+  end
 end

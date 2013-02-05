@@ -15,6 +15,7 @@ gem 'rails-translate-routes'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'http_accept_language', :git => 'git://github.com/kaize/http_accept_language.git'
+gem 'keynote'
 
 group :development do
   gem 'russian'

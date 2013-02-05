@@ -1,4 +1,6 @@
 #image
+  = f.radio_button(:main?, f.object.main?, :name => :main)
+  = f.label(f.options[:child_index], :set_as_main,)
   = image_tag(f.object.filename_url(:thumb)) if f.object.filename?
   = f.file_field :filename
   -if f.object.new_record?

@@ -1,3 +1,52 @@
 // Place all the styles related to the Dashboard::Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item{
+  margin: 3px;
+  background: {
+    color: #ddd;
+  }
+}
+
+.item--title-area{
+  background-color: #bbb;
+  border-bottom: 2px solid;
+  padding: 7px;
+}
+
+.item--title{
+  font-size: 120%;
+  float: left;
+}
+
+.item--create-time{
+  font-size: small;
+  text-align: right;
+}
+
+.item--body{
+  padding: 10px;
+  img {
+    margin: {
+        right: 5px;
+        bottom: 5px;
+    }
+    float: left; 
+  }
+}
+
+.item--tags{
+  padding-right: 10px;
+  background-color: #ccc;
+  text-align: right;
+  font-size: small;
+}
+
+.item--images{
+  padding: 10px;
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}

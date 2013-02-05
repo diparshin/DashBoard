@@ -1,0 +1,5 @@
+#menu
+  - if user_signed_in?
+    %ul
+      %li= link_to t(:new_item), new_dashboard_item_url
+      %li= link_to t(:items_list), dashboard_items_url

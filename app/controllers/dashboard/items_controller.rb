@@ -23,6 +23,7 @@ class Dashboard::ItemsController < ApplicationController
   
   def edit
     @item = current_user.items.find(params[:id])
+    @main = 'new'
   end
   
   def update
@@ -30,6 +31,9 @@ class Dashboard::ItemsController < ApplicationController
     
     if @item.update_attributes(params[:item])
       @item.set_tags(params[:tags])
+      @main = params[:main]
+      render :edit
+
       redirect_to dashboard_items_url
     else
       render :edit  

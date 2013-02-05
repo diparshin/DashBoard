@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   
   def redirect_to_default_client_locale
     unless params[:locale]
-      redirect_to '/' + I18n.locale.to_s + url_for(:only_path => true)
+      redirect_to url_for(:only_path => true, :locale => I18n.locale.to_s)
     end
   end
   

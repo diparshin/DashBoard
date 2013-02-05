@@ -9,6 +9,8 @@ DashBoard::Application.routes.draw do
     resources :items
   end
   
+  get 'tag/:name' => 'tag#show', :as => 'show_tagged_items'
+  
   ActionDispatch::Routing::Translator.translate_from_file('config/locales/routes.yml', { :prefix_on_default_locale => true, :keep_untranslated_routes => true })
   # The priority is based upon order of creation:
   # first created -> highest priority.
